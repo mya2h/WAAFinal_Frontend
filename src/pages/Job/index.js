@@ -16,6 +16,7 @@ const Job = ()=>{
         city: 'New York',
         state: 'NY',
       },
+      isSelfPosted:false
     },
     {
       title: 'Mechanical Engineer',
@@ -27,6 +28,7 @@ const Job = ()=>{
         city: 'New York',
         state: 'NY',
       },
+      isSelfPosted:true
     },
     {
       title: 'Senior Software Engineer',
@@ -38,6 +40,7 @@ const Job = ()=>{
         city: 'New York',
         state: 'NY',
       },
+      isSelfPosted:true
     },
     {
       title: 'Junior React Developer',
@@ -49,6 +52,7 @@ const Job = ()=>{
         city: 'New York',
         state: 'NY',
       },
+      isSelfPosted:false
     },
     {
       title: 'Software Engineer',
@@ -60,6 +64,7 @@ const Job = ()=>{
         city: 'New York',
         state: 'NY',
       },
+      isSelfPosted:false
     },
   ]);
     
@@ -84,9 +89,6 @@ const Job = ()=>{
       </Stack>
 
       <Container maxWidth="lg" style={{ marginTop: '20px' }}>
-        <Typography variant="h4" component="h1" align="center" gutterBottom>
-          Job Poasting
-        </Typography>
         <JobList jobs={jobs} onApply={handleApply} />
         <AddJob
           open={isModalOpen}
