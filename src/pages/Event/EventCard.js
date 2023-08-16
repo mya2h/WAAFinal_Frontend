@@ -2,6 +2,7 @@ import React,{useState} from 'react';
 import { Card, CardContent, Typography, Grid, Badge, Avatar,CardActions,Button } from '@mui/material';
 import {makeStyles} from '@mui/styles';
 import ModeEditIcon from '@mui/icons-material/ModeEdit';
+import EditEvent from './EditEvent';
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -98,9 +99,9 @@ const EventCard = ({ event,onAttend }) => {
           Attend
         </Button>}
       </CardActions>
-      {/* <Grid container justifyContent="space-between" alignItems="center">
-        <Avatar className={classes.avatar}>E</Avatar>
-      </Grid> */}
+      <EditEvent event={event} open={isEditModalOpen}
+        onClose={handleEditModalClose}
+        onEditJob={handleEditEvent}/>
     </Card>
   );
 };

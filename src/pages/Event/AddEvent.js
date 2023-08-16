@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Modal, Box, Typography, TextField, Button, Grid, MenuItem, Select, InputLabel, FormControl } from '@mui/material';
-import LocationOnIcon from '@mui/icons-material/LocationOn';
+import { Modal, Box, Typography, TextField, Button,MenuItem, Select, InputLabel, FormControl } from '@mui/material';
 
 const AddEvent = ({ open, onClose, onAddEvent }) => {
   const [eventData, setEventData] = useState({
@@ -9,14 +8,6 @@ const AddEvent = ({ open, onClose, onAddEvent }) => {
     eventType: '',
     location: '',
     date: '',
-    address: {
-      street: '',
-      city: '',
-      state: '',
-      zipCode: '',
-    },
-    openDate: '',
-    closingDate: '',
   });
 
   const handleInputChange = (event) => {
@@ -83,9 +74,9 @@ const AddEvent = ({ open, onClose, onAddEvent }) => {
             value={eventData.eventType}
             onChange={handleInputChange}
           >
-            <MenuItem value="reunion">Reunion</MenuItem>
-            <MenuItem value="workshop">Workshop</MenuItem>
-            <MenuItem value="seminar">Seminar</MenuItem>
+            <MenuItem value="Reunion">Reunion</MenuItem>
+            <MenuItem value="Workshop">Workshop</MenuItem>
+            <MenuItem value="Seminar">Seminar</MenuItem>
           </Select>
         </FormControl>
         <TextField
