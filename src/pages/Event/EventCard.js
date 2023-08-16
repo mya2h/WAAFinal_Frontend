@@ -1,6 +1,7 @@
-import React from 'react';
-import { Card, CardContent, Typography, Grid, Badge, Avatar } from '@mui/material';
+import React,{useState} from 'react';
+import { Card, CardContent, Typography, Grid, Badge, Avatar,CardActions,Button } from '@mui/material';
 import {makeStyles} from '@mui/styles';
+import ModeEditIcon from '@mui/icons-material/ModeEdit';
 
 const useStyles = makeStyles((theme) => ({
   card: {
@@ -44,7 +45,7 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-const EventCard = ({ event }) => {
+const EventCard = ({ event,onAttend }) => {
   const classes = useStyles();
 
   let eventTypeStyle;
@@ -61,6 +62,17 @@ const EventCard = ({ event }) => {
   default:
     eventTypeStyle = '';
   }
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false);
+  const handleEditEvent = () => {
+    console.log('edited job');
+  };
+  const handleEditModalOpen = () => {
+    setIsEditModalOpen(true);
+  };
+
+  const handleEditModalClose = () => {
+    setIsEditModalOpen(false);
+  };
 
   return (
     <Card elevation={3} className={`${classes.card} `}>
@@ -78,9 +90,17 @@ const EventCard = ({ event }) => {
           {event.description}
         </Typography>
       </CardContent>
-      <Grid container justifyContent="space-between" alignItems="center">
+      <CardActions>
+        {event.isSelfPosted? <Button startIcon={<ModeEditIcon />} onClick={handleEditModalOpen}>
+            Edit
+        </Button>: <Button variant='contained' color="secondary" elevation={0} 
+          size="small" onClick={() => onAttend(event)}>
+          Attend
+        </Button>}
+      </CardActions>
+      {/* <Grid container justifyContent="space-between" alignItems="center">
         <Avatar className={classes.avatar}>E</Avatar>
-      </Grid>
+      </Grid> */}
     </Card>
   );
 };

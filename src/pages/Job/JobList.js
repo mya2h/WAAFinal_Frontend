@@ -27,6 +27,7 @@ const JobList = ({jobs,handleApply}) => {
         label="Search Jobs"
         variant="outlined"
         fullWidth
+        size="small"
         margin="normal"
         value={searchTerm}
         onChange={handleSearchChange}

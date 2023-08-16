@@ -83,7 +83,7 @@ const Job = ()=>{
         <Typography variant="h4" gutterBottom>
             Job Posting
         </Typography>
-        <Button variant="contained" startIcon={<Iconify icon="eva:plus-fill" />} onClick={() => setIsModalOpen(true)}>
+        <Button variant="contained" startIcon={<Iconify icon="eva:plus-fill" />} onClick={() => setIsModalOpen(true)} size="small">
             Add Job
         </Button>
       </Stack>
