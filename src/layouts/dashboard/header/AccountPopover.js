@@ -2,7 +2,7 @@ import { useState } from 'react';
 // @mui
 import { alpha } from '@mui/material/styles';
 import { Box, Divider, Typography, Stack, MenuItem, Avatar, IconButton, Popover } from '@mui/material';
-import {Link} from 'react-router-dom';
+import {Link,useNavigate} from 'react-router-dom';
 // mocks_
 import account from '../../../_mock/account';
 
@@ -12,13 +12,14 @@ const MENU_OPTIONS = [
   {
     label: 'Profile',
     icon: 'eva:person-fill',
-    link:'dashboard/profile'
+    link:'/dashboard/profile'
   },
 ];
 
 // ----------------------------------------------------------------------
 
 export default function AccountPopover() {
+  const navigate = useNavigate();
   const [open, setOpen] = useState(null);
 
   const handleOpen = (event) => {
@@ -28,7 +29,9 @@ export default function AccountPopover() {
   const handleClose = () => {
     setOpen(null);
   };
-
+  const handleLogOut = ()=>{
+    navigate('/login');
+  };
   return (
     <>
       <IconButton
@@ -91,7 +94,7 @@ export default function AccountPopover() {
 
         <Divider sx={{ borderStyle: 'dashed' }} />
 
-        <MenuItem onClick={handleClose} sx={{ m: 1 }}>
+        <MenuItem onClick={handleLogOut} sx={{ m: 1 }}>
           Logout
         </MenuItem>
       </Popover>

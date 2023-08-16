@@ -15,7 +15,7 @@ export default function LoginForm() {
   const [user,setUser] = useState({
     email:'',
     password:''
-  })
+  });
 
   const handleClick = () => {
     localStorage.setItem('role',user.email);
@@ -24,7 +24,7 @@ export default function LoginForm() {
   const handleChange = (e)=>{
     e.preventDefault();
     setUser({...user,[e.target.name]:e.target.value});
-  }
+  };
   return (
     <>
       <Stack spacing={3}>
