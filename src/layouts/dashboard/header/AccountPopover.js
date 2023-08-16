@@ -2,6 +2,7 @@ import { useState } from 'react';
 // @mui
 import { alpha } from '@mui/material/styles';
 import { Box, Divider, Typography, Stack, MenuItem, Avatar, IconButton, Popover } from '@mui/material';
+import {Link} from 'react-router-dom';
 // mocks_
 import account from '../../../_mock/account';
 
@@ -9,16 +10,9 @@ import account from '../../../_mock/account';
 
 const MENU_OPTIONS = [
   {
-    label: 'Home',
-    icon: 'eva:home-fill',
-  },
-  {
     label: 'Profile',
     icon: 'eva:person-fill',
-  },
-  {
-    label: 'Settings',
-    icon: 'eva:settings-2-fill',
+    link:'dashboard/profile'
   },
 ];
 
@@ -44,7 +38,7 @@ export default function AccountPopover() {
           ...(open && {
             '&:before': {
               zIndex: 1,
-              content: "''",
+              content: '\'\'',
               width: '100%',
               height: '100%',
               borderRadius: '50%',
@@ -90,7 +84,7 @@ export default function AccountPopover() {
         <Stack sx={{ p: 1 }}>
           {MENU_OPTIONS.map((option) => (
             <MenuItem key={option.label} onClick={handleClose}>
-              {option.label}
+              <Link to={option.link}> {option.label}</Link>
             </MenuItem>
           ))}
         </Stack>
