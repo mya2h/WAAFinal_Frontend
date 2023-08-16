@@ -50,7 +50,6 @@ const JobPostCard = ({ job, onApply }) => {
         </Button>: <Button variant="outlined" color="primary" onClick={() => onApply(job)}>
           Apply
         </Button>}
-     
       </CardActions>
       <EditJob job={job} open={isEditModalOpen}
         onClose={handleEditModalClose}
