@@ -3,26 +3,33 @@ import { TextField, Box, Button, Typography,Card,CardContent } from '@mui/materi
 
 const MyForm = () => {
   const [formData, setFormData] = useState({
-    gradYear: '',
-    major: '',
-    numExperience: '',
-    achievement: '',
+    gradYear: '2023',
+    major: 'Computer Science',
+    numExperience: '2',
+    achievement: 'Dean\'s List',
   });
 
   const [address, setAddress] = useState({
-    zip: '',
-    street: '',
-    city: '',
-    state: '',
+    zip: '12345',
+    street: '123 Main St',
+    city: 'Cityville',
+    state: 'CA',
   });
 
   const [experiences, setExperiences] = useState([
     {
-      position: '',
-      responsibilities: '',
-      startDate: '',
-      endDate: '',
-      organization: '',
+      position: 'Software Developer',
+      responsibilities: 'Developed web applications...',
+      startDate: '2022-01-01',
+      endDate: '2022-12-31',
+      organization: 'Tech Company A',
+    },
+    {
+      position: 'Intern',
+      responsibilities: 'Assisted with coding...',
+      startDate: '2021-06-01',
+      endDate: '2021-08-31',
+      organization: 'Tech Company B',
     },
   ]);
 

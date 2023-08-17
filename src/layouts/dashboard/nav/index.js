@@ -83,7 +83,7 @@ export default function Nav({ openNav, onCloseNav }) {
         user === 'admin' && <NavSection data={adminNav} />
       }
       {
-        user === 'almuni' && <NavSection data={almuniNav} />
+        user === 'alumni' && <NavSection data={almuniNav} />
       }
 
       <Box sx={{ flexGrow: 1 }} />

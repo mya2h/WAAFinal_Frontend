@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 // @mui
 import { alpha } from '@mui/material/styles';
 import { Box, Divider, Typography, Stack, MenuItem, Avatar, IconButton, Popover } from '@mui/material';
@@ -17,10 +17,14 @@ const MENU_OPTIONS = [
 ];
 
 // ----------------------------------------------------------------------
-
+const linkStyle = {
+  textDecoration: 'none',
+  color: 'inherit',
+};
 export default function AccountPopover() {
   const navigate = useNavigate();
   const [open, setOpen] = useState(null);
+  
 
   const handleOpen = (event) => {
     setOpen(event.currentTarget);
@@ -30,6 +34,8 @@ export default function AccountPopover() {
     setOpen(null);
   };
   const handleLogOut = ()=>{
+    localStorage.removeItem('token');
+    localStorage.removeItem('role');
     navigate('/login');
   };
   return (
@@ -51,7 +57,7 @@ export default function AccountPopover() {
           }),
         }}
       >
-        <Avatar src={account.photoURL} alt="photoURL" />
+        <Avatar src={account.photoURL? account.photoURL:''} alt="photoURL" />
       </IconButton>
 
       <Popover
@@ -86,9 +92,11 @@ export default function AccountPopover() {
 
         <Stack sx={{ p: 1 }}>
           {MENU_OPTIONS.map((option) => (
-            <MenuItem key={option.label} onClick={handleClose}>
-              <Link to={option.link}> {option.label}</Link>
-            </MenuItem>
+            <Link to={option.link} style={linkStyle}>
+              <MenuItem key={option.label} onClick={handleClose}>
+                {option.label}
+              </MenuItem>
+            </Link>
           ))}
         </Stack>
 

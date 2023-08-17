@@ -25,7 +25,7 @@ const StyledSearch = styled(OutlinedInput)(({ theme }) => ({
     boxShadow: theme.customShadows.z8,
   },
   '& fieldset': {
-    borderWidth: `1px !important`,
+    borderWidth: '1px !important',
     borderColor: `${alpha(theme.palette.grey[500], 0.32)} !important`,
   },
 }));

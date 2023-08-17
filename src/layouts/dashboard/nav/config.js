@@ -18,7 +18,7 @@ export const almuniNav = [
   },
   {
     title: 'News/Announcements',
-    path: '/dashboard/announcement',
+    path: '/dashboard/newsandannouncements',
     icon: icon('ic_disabled'),
   },
 ];
@@ -39,14 +39,14 @@ export const adminNav = [
     icon: icon('ic_cart'),
   },
   {
-    title: 'Register User',
-    path: '/login',
-    icon: icon('ic_lock'),
+    title: 'News/Announcements',
+    path: '/dashboard/newsandannouncements',
+    icon: icon('ic_disabled'),
   },
   {
-    title: 'News/Announcements',
-    path: '/404',
-    icon: icon('ic_disabled'),
+    title: 'Register User',
+    path: '/dashboard/user',
+    icon: icon('ic_lock'),
   },
   // {
   //   title: 'Not found',
